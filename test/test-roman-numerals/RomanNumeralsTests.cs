@@ -15,11 +15,11 @@ namespace RomanNumerals
             Assert.That(numerals, Is.EqualTo(expectedNumerals));
         }
 
-        public string GetNumeralsFor(int number)
+        public string GetNumeralsFor(int numberToConvert)
         {
-            if (number > 0) {
+            if (numberToConvert > 0) {
                 var numerals = string.Empty;
-                for (var i = number; i > 0; i--) {
+                for (var i = numberToConvert; i > 0; i--) {
                     numerals += "I";
                 }
                 return numerals;
