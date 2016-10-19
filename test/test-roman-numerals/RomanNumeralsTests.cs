@@ -40,15 +40,12 @@ namespace RomanNumerals
             var remainder = numberToConvert;
 
             var builder = new RomanNumeralsBuilder(remainder, numerals);
-            for (var i = Math.Floor(((decimal)(remainder / 10))); i > 0; i--){
-                builder = builder.ReplaceNumberWithNumeral(10, "X");
-            }            
+            builder = builder.ReplaceNumberWithNumeral(10, "X");
             builder = builder.ReplaceNumberWithNumeral(9, "IX");
             builder = builder.ReplaceNumberWithNumeral(5, "V");
             builder = builder.ReplaceNumberWithNumeral(4, "IV");
-            for (var i = Math.Floor(((decimal)(remainder / 1))); i > 0; i--) {
-                builder = builder.ReplaceNumberWithNumeral(1, "I");
-            }
+            builder = builder.ReplaceNumberWithNumeral(1, "I");
+
             return builder.Numerals;
         }
     }
@@ -74,12 +71,16 @@ namespace RomanNumerals
 
         public RomanNumeralsBuilder ReplaceNumberWithNumeral(int number, string numeral)
         {
-            if (_remainder >= number) {
-                var numerals = _numerals + numeral;
-                var remainder = _remainder - number;
-                return new RomanNumeralsBuilder(remainder, numerals);
+            var numerals = _numerals;
+            var remainder = _remainder;
+            for (var i = Math.Floor(((decimal)(_remainder / number))); i > 0; i--){
+                if (_remainder >= number) {
+                    numerals = numerals + numeral;
+                    remainder = remainder - number;
+                }
             }
-            return this;
+
+            return new RomanNumeralsBuilder(remainder, numerals);
         }
     }
 }
