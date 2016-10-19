@@ -11,6 +11,7 @@ namespace NumeralSystems
             var remainder = numberToConvert;
 
             return new RomanNumeralsBuilder(remainder, numerals)
+                .ReplaceNumberWithNumerals(50, "L")
                 .ReplaceNumberWithNumerals(40, "XL")
                 .ReplaceNumberWithNumerals(10, "X")
                 .ReplaceNumberWithNumerals(9, "IX")
