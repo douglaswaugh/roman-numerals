@@ -5,28 +5,14 @@ namespace RomanNumerals
     [TestFixture]
     public class RomanNumeralsTests
     {
-        [Test]
-        public void Should_return_empty_string_for_0()
+        [TestCase(0, "")]
+        [TestCase(1, "I")]
+        [TestCase(2, "II")]
+        public void Should_return_numerals_for_number(int number, string expectedNumerals)
         {
-            var numerals = GetNumeralsFor(0);
+            var numerals = GetNumeralsFor(number);
 
-            Assert.That(numerals, Is.EqualTo(string.Empty));
-        }
-
-        [Test]
-        public void Should_return_I_for_1()
-        {
-            var numerals = GetNumeralsFor(1);
-
-            Assert.That(numerals, Is.EqualTo("I"));
-        }
-
-        [Test]
-        public void Should_return_II_for_2()
-        {
-            var numerals = GetNumeralsFor(2);
-
-            Assert.That(numerals, Is.EqualTo("II"));
+            Assert.That(numerals, Is.EqualTo(expectedNumerals));
         }
 
         public string GetNumeralsFor(int number)
