@@ -13,9 +13,20 @@ namespace RomanNumerals
             Assert.That(numerals, Is.EqualTo(string.Empty));
         }
 
+        [Test]
+        public void Should_return_I_for_1()
+        {
+            var numerals = GetNumeralsFor(1);
+
+            Assert.That(numerals, Is.EqualTo("I"));
+        }
+
         public string GetNumeralsFor(int number)
         {
+            if (number > 0)
+                return "I";
+
             return string.Empty;
         }
     }
-}  
+}
