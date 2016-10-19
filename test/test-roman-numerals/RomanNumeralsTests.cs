@@ -28,7 +28,7 @@ namespace RomanNumerals
                 return string.Empty;
 
             var numerals = string.Empty;
-            if (numberToConvert / 4 >= 1) {
+            if (numberToConvert == 4) {
                 var numberOfFives = Math.Floor(((decimal)numberToConvert / 4));
                 numerals = "IV";
             }
