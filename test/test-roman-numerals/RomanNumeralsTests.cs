@@ -56,9 +56,11 @@ namespace RomanNumerals
                 numerals += "IV";
                 remainder = remainder - 4;
             }
-            if (remainder > 0 && remainder <=3) {
-                for (var i = remainder; i > 0; i--) {
+            if (remainder <=3) {
+                var numberOfOnes = Math.Floor(((decimal)(remainder / 1)));
+                for (var i = numberOfOnes; i > 0; i--) {
                     numerals += "I";
+                    numberOfOnes = numberOfOnes - 1;
                 }
             }
             return numerals;
