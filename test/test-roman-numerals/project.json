@@ -2,11 +2,14 @@
   "version": "1.0.0-*",
   "buildOptions": {
     "debugType": "portable",
-    "emitEntryPoint": true
+    "emitEntryPoint": false
   },
   "dependencies": {
     "NUnit": "3.4.1",
-    "dotnet-test-nunit": "3.4.0-beta-2"
+    "dotnet-test-nunit": "3.4.0-beta-2",
+    "roman-numerals": {
+      "target": "project"
+    }
   },
   "testRunner": "nunit",
   "frameworks": {
