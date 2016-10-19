@@ -12,6 +12,7 @@ namespace RomanNumerals
         [TestCase(4, "IV")]
         [TestCase(5, "V")]
         [TestCase(6, "VI")]
+        [TestCase(8, "VIII")]
         public void Should_return_numerals_for_number(int number, string expectedNumerals)
         {
             var numerals = GetNumeralsFor(number);
