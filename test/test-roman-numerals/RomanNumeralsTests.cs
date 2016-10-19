@@ -34,14 +34,13 @@ namespace RomanNumerals
             var numerals = string.Empty;
             var remainder = numberToConvert;
 
-            var builder = new RomanNumeralsBuilder(remainder, numerals);
-            builder = builder.ReplaceNumberWithNumeral(10, "X");
-            builder = builder.ReplaceNumberWithNumeral(9, "IX");
-            builder = builder.ReplaceNumberWithNumeral(5, "V");
-            builder = builder.ReplaceNumberWithNumeral(4, "IV");
-            builder = builder.ReplaceNumberWithNumeral(1, "I");
-
-            return builder.Numerals;
+            return new RomanNumeralsBuilder(remainder, numerals)
+                .ReplaceNumberWithNumeral(10, "X")
+                .ReplaceNumberWithNumeral(9, "IX")
+                .ReplaceNumberWithNumeral(5, "V")
+                .ReplaceNumberWithNumeral(4, "IV")
+                .ReplaceNumberWithNumeral(1, "I")
+                .Numerals;
         }
     }
 
