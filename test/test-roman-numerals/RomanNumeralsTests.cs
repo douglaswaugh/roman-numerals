@@ -15,7 +15,8 @@ namespace RomanNumerals
         [TestCase(8, "VIII")]
         [TestCase(9, "IX")]
         [TestCase(10, "X")]
-        [TestCase(20, "XX")]
+        [TestCase(20, "XX")]        
+        [TestCase(29, "XXIX")]
         public void Should_return_numerals_for_number(int number, string expectedNumerals)
         {
             var numerals = GetNumeralsFor(number);
@@ -44,7 +45,7 @@ namespace RomanNumerals
                 }
             }
             if (remainder == 9) {
-                numerals = "IX";
+                numerals += "IX";
                 remainder = remainder - 9;
             }
             if (remainder >= 5) {
