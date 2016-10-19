@@ -35,11 +35,11 @@ namespace RomanNumerals
             var remainder = numberToConvert;
 
             return new RomanNumeralsBuilder(remainder, numerals)
-                .ReplaceNumberWithNumeral(10, "X")
-                .ReplaceNumberWithNumeral(9, "IX")
-                .ReplaceNumberWithNumeral(5, "V")
-                .ReplaceNumberWithNumeral(4, "IV")
-                .ReplaceNumberWithNumeral(1, "I")
+                .ReplaceNumberWithNumerals(10, "X")
+                .ReplaceNumberWithNumerals(9, "IX")
+                .ReplaceNumberWithNumerals(5, "V")
+                .ReplaceNumberWithNumerals(4, "IV")
+                .ReplaceNumberWithNumerals(1, "I")
                 .Numerals;
         }
     }
@@ -63,7 +63,7 @@ namespace RomanNumerals
             get { return _numerals; }
         }
 
-        public RomanNumeralsBuilder ReplaceNumberWithNumeral(int number, string numeral)
+        public RomanNumeralsBuilder ReplaceNumberWithNumerals(int number, string numeral)
         {
             var numerals = _numerals;
             var remainder = _remainder;
