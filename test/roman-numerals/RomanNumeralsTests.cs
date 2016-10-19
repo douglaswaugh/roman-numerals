@@ -18,7 +18,7 @@ namespace TestRomanNumerals
         [TestCase(20, "XX")]
         [TestCase(29, "XXIX")]
         [TestCase(35, "XXXV")]
-        [TestCase(44, "XXXXIV")]
+        [TestCase(44, "XLIV")]
         public void Should_return_numerals_for_number(int number, string expectedNumerals)
         {
             var romanNumerals = new RomanNumerals();
