@@ -26,11 +26,6 @@ namespace RomanNumerals
             Assert.That(numerals, Is.EqualTo(expectedNumerals));
         }
 
-        // put the right number of numerals in 
-        // pass on the remainder
-
-        // something to do with the base ten-ness; multiples of 1's, 10's, 100's, etc. can exist, but not the other numbers
-
         public string GetNumeralsFor(int numberToConvert)
         {
             if (numberToConvert == 0)
