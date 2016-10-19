@@ -39,33 +39,47 @@ namespace RomanNumerals
             var numerals = string.Empty;
             var remainder = numberToConvert;
 
-            if (remainder >= 10) {
-                var numberOfTens = Math.Floor(((decimal)(remainder / 10)));
-                for (var i = numberOfTens; i > 0; i--){
-                    numerals += "X";
-                    remainder = remainder - 10;
-                }
+            var builder = new RomanNumeralsBuilder(remainder, numerals);
+            for (var i = Math.Floor(((decimal)(remainder / 10))); i > 0; i--){
+                builder = builder.ReplaceNumberWithNumeral(10, "X");
+            }            
+            builder = builder.ReplaceNumberWithNumeral(9, "IX");
+            builder = builder.ReplaceNumberWithNumeral(5, "V");
+            builder = builder.ReplaceNumberWithNumeral(4, "IV");
+            for (var i = Math.Floor(((decimal)(remainder / 1))); i > 0; i--) {
+                builder = builder.ReplaceNumberWithNumeral(1, "I");
             }
-            if (remainder == 9) {
-                numerals += "IX";
-                remainder = remainder - 9;
+            return builder.Numerals;
+        }
+    }
+
+    public class RomanNumeralsBuilder
+    {
+        int _remainder;
+        string _numerals;
+
+        public RomanNumeralsBuilder (int remainder, string numerals)
+        {
+          _remainder = remainder;
+          _numerals = numerals;
+        }
+
+        public int Remainder {
+            get { return _remainder; }
+        }
+
+        public string Numerals {
+            get { return _numerals; }
+        }
+
+        public RomanNumeralsBuilder ReplaceNumberWithNumeral(int number, string numeral)
+        {
+            if (_remainder >= number) {
+                var numerals = _numerals + numeral;
+                var remainder = _remainder - number;
+                return new RomanNumeralsBuilder(remainder, numerals);
             }
-            if (remainder >= 5) {
-                numerals += "V";
-                remainder = remainder - 5;
-            }
-            if (remainder == 4) {
-                numerals += "IV";
-                remainder = remainder - 4;
-            }
-            if (remainder <=3) {
-                var numberOfOnes = Math.Floor(((decimal)(remainder / 1)));
-                for (var i = numberOfOnes; i > 0; i--) {
-                    numerals += "I";
-                    numberOfOnes = numberOfOnes - 1;
-                }
-            }
-            return numerals;
+            return this;
         }
     }
 }
