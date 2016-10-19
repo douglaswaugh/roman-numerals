@@ -21,10 +21,23 @@ namespace RomanNumerals
             Assert.That(numerals, Is.EqualTo("I"));
         }
 
+        [Test]
+        public void Should_return_II_for_2()
+        {
+            var numerals = GetNumeralsFor(2);
+
+            Assert.That(numerals, Is.EqualTo("II"));
+        }
+
         public string GetNumeralsFor(int number)
         {
-            if (number > 0)
-                return "I";
+            if (number > 0) {
+                var numerals = string.Empty;
+                for (var i = number; i > 0; i--) {
+                    numerals += "I";
+                }
+                return numerals;
+            }                
 
             return string.Empty;
         }
