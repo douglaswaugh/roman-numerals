@@ -23,7 +23,7 @@ namespace RomanNumerals
                     numerals += "I";
                 }
                 return numerals;
-            }                
+            }
 
             return string.Empty;
         }
