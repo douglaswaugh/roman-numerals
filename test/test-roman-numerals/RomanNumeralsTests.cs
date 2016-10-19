@@ -15,7 +15,7 @@ namespace RomanNumerals
         [TestCase(8, "VIII")]
         [TestCase(9, "IX")]
         [TestCase(10, "X")]
-        [TestCase(20, "XX")]        
+        [TestCase(20, "XX")]
         [TestCase(29, "XXIX")]
         [TestCase(35, "XXXV")]
         [TestCase(44, "XXXXIV")]
