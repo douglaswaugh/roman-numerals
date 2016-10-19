@@ -13,6 +13,7 @@ namespace RomanNumerals
         [TestCase(5, "V")]
         [TestCase(6, "VI")]
         [TestCase(8, "VIII")]
+        [TestCase(9, "IX")]
         public void Should_return_numerals_for_number(int number, string expectedNumerals)
         {
             var numerals = GetNumeralsFor(number);
@@ -33,9 +34,13 @@ namespace RomanNumerals
             var numerals = string.Empty;
             var remainder = numberToConvert;
 
-            if (numberToConvert >= 5) {
+            if (numberToConvert == 9) {
+                numerals = "IX";
+                remainder = numberToConvert - 9;
+            }
+            if (remainder >= 5) {
                 numerals = "V";
-                remainder = numberToConvert - 5;
+                remainder = remainder - 5;
             }
             if (remainder == 4) {
                 numerals += "IV";
