@@ -34,9 +34,9 @@ namespace RomanNumerals
             var numerals = string.Empty;
             var remainder = numberToConvert;
 
-            if (numberToConvert == 9) {
+            if (remainder == 9) {
                 numerals = "IX";
-                remainder = numberToConvert - 9;
+                remainder = remainder - 9;
             }
             if (remainder >= 5) {
                 numerals = "V";
