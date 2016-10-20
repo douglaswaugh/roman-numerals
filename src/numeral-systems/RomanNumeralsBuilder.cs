@@ -13,10 +13,6 @@ namespace NumeralSystems
           _numerals = numerals;
         }
 
-        public int Remainder {
-            get { return _remainder; }
-        }
-
         public string Numerals {
             get { return _numerals; }
         }
