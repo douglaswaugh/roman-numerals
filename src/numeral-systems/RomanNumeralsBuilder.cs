@@ -35,9 +35,9 @@ namespace NumeralSystems
             return new RomanNumeralsBuilder(remainder, numerals);
         }
 
-        public decimal Quotient(int dividend, int divisor) 
+        public int Quotient(int dividend, int divisor)
         {
-            return Math.Floor(((decimal)(dividend / divisor)));
+            return dividend / divisor;
         }
     }
 }
