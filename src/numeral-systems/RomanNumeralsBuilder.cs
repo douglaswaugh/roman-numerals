@@ -25,7 +25,7 @@ namespace NumeralSystems
         {
             var numerals = _numerals;
             var remainder = _remainder;
-            for (var i = Math.Floor(((decimal)(_remainder / number))); i > 0; i--){
+            for (var i = Quotient(_remainder, number); i > 0; i--){
                 if (_remainder >= number) {
                     numerals = numerals + numeral;
                     remainder = remainder - number;
@@ -33,6 +33,11 @@ namespace NumeralSystems
             }
 
             return new RomanNumeralsBuilder(remainder, numerals);
+        }
+
+        public decimal Quotient(int dividend, int divisor) 
+        {
+            return Math.Floor(((decimal)(dividend / divisor)));
         }
     }
 }
