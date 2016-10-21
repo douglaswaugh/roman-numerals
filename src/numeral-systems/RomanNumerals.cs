@@ -32,6 +32,7 @@ namespace NumeralSystems
                 .Replace("VV", "X")
                 .Replace("VIV", "IX")
                 .Replace("XXXXX", "L")
+                .Replace("XXXX", "XL")
                 .Replace("LL", "C");
         }
     }

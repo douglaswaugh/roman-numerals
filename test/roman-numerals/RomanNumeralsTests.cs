@@ -43,7 +43,7 @@ namespace TestRomanNumerals
         [TestCase(20, "XX")]
         [TestCase(29, "XXIX")]
         [TestCase(35, "XXXV")]
-        // [TestCase(44, "XLIV")]
+        [TestCase(44, "XLIV")]
         [TestCase(88, "LXXXVIII")]
         [TestCase(101, "CI")]
         [TestCase(333, "CCCXXXIII")]
