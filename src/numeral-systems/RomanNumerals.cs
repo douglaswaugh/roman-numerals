@@ -21,5 +21,12 @@ namespace NumeralSystems
                 .ReplaceNumberWithNumerals(1, "I")
                 .Numerals;
         }
+
+        public string GetNumeralsByReplace(int numberToConvert)
+        {
+            var numerals = new string('I', numberToConvert);
+
+            return numerals;
+        }
     }
 }
