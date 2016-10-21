@@ -27,7 +27,8 @@ namespace NumeralSystems
             var numerals = new string('I', numberToConvert);
 
             return numerals
-                .Replace("IIIII", "V");
+                .Replace("IIIII", "V")
+                .Replace("VV", "X");
         }
     }
 }
