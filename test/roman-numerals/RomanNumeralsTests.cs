@@ -34,7 +34,7 @@ namespace TestRomanNumerals
         [TestCase(0, "")]
         [TestCase(1, "I")]
         [TestCase(2, "II")]
-        // [TestCase(4, "IV")]
+        [TestCase(4, "IV")]
         [TestCase(5, "V")]
         [TestCase(6, "VI")]
         [TestCase(8, "VIII")]
