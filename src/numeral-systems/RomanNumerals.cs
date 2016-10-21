@@ -29,7 +29,8 @@ namespace NumeralSystems
             return numerals
                 .Replace("IIIII", "V")
                 .Replace("VV", "X")
-                .Replace("XXXXX", "L");
+                .Replace("XXXXX", "L")
+                .Replace("LL", "C");
         }
     }
 }
