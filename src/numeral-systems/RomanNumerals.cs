@@ -30,6 +30,7 @@ namespace NumeralSystems
                 .Replace("IIIII", "V")
                 .Replace("IIII", "IV")
                 .Replace("VV", "X")
+                .Replace("VIV", "IX")
                 .Replace("XXXXX", "L")
                 .Replace("LL", "C");
         }
