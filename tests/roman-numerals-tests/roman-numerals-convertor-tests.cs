@@ -15,5 +15,15 @@ namespace RomanNumeralsTests
 
       Assert.That(romanNumeral, Is.EqualTo("I"));
     }
+
+    [Test]
+    public void Should_return_II_for_2()
+    {
+      var romanNumeralsConvertor = new RomanNumeralsConvertor();
+
+      var romanNumeral = romanNumeralsConvertor.FromInt(2);
+
+      Assert.That(romanNumeral, Is.EqualTo("II"));
+    }
   }
 }

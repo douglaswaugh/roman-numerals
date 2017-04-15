@@ -6,7 +6,13 @@ namespace RomanNumerals
   {
     public string FromInt(int arabic)
     {
-      return "I";
+      string romanNumerals = string.Empty;
+      for (int i = 1; i <= arabic; i++)
+      {
+        romanNumerals += "I";
+      }
+
+      return romanNumerals;
     }
   }
 }
