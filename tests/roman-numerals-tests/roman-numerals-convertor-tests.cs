@@ -6,24 +6,15 @@ namespace RomanNumeralsTests
   [TestFixture]
   public class RomanNumeralsConvertorTests
   {
-    [Test]
-    public void Should_return_I_for_1()
+    [TestCase(1, "I")]
+    [TestCase(2, "II")]
+    public void Should_return_roman_numeral_for_arabic(int arabic, string expectedRomanNumeral)
     {
       var romanNumeralsConvertor = new RomanNumeralsConvertor();
 
-      var romanNumeral = romanNumeralsConvertor.FromInt(1);
+      var romanNumeral = romanNumeralsConvertor.FromInt(arabic);
 
-      Assert.That(romanNumeral, Is.EqualTo("I"));
-    }
-
-    [Test]
-    public void Should_return_II_for_2()
-    {
-      var romanNumeralsConvertor = new RomanNumeralsConvertor();
-
-      var romanNumeral = romanNumeralsConvertor.FromInt(2);
-
-      Assert.That(romanNumeral, Is.EqualTo("II"));
+      Assert.That(romanNumeral, Is.EqualTo(expectedRomanNumeral));
     }
   }
 }
