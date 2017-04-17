@@ -26,7 +26,7 @@ namespace RomanNumerals
         arabic = i - 4;
       }
 
-      for (int i = arabic; i >= 1; i--)
+      for (int i = arabic; i >= 1; i = i - 1)
       {
         romanNumerals += "I";
       }
