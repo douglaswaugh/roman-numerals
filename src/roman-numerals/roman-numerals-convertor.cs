@@ -8,6 +8,12 @@ namespace RomanNumerals
     {
       string romanNumerals = string.Empty;
 
+      for (int i = arabic; i >= 10; i = i - 10)
+      {
+        romanNumerals += "X";
+        arabic = i - 10;
+      }
+
       for (int i = arabic; i >= 5; i = i - 5)
       {
         romanNumerals += "V";
