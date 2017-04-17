@@ -2,8 +2,8 @@ namespace RomanNumerals
 {
   public class RomanNumeralsBuilder
   {
-    int _remaining;
-    string _romanNumerals;
+    private readonly int _remaining;
+    private readonly string _romanNumerals;
 
     public string RomanNumerals { get {return _romanNumerals; } }
 
