@@ -8,6 +8,7 @@ namespace RomanNumeralsTests
   {
     [TestCase(1, "I")]
     [TestCase(2, "II")]
+    [TestCase(5, "V")]
     public void Should_return_roman_numeral_for_arabic(int arabic, string expectedRomanNumeral)
     {
       var romanNumeralsConvertor = new RomanNumeralsConvertor();
