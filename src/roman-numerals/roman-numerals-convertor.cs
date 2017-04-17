@@ -7,7 +7,7 @@ namespace RomanNumerals
     public string FromInt(int arabic)
     {
       string romanNumerals = string.Empty;
-      for (int i = 1; i <= arabic; i++)
+      for (int i = arabic; i >= 1; i--)
       {
         romanNumerals += "I";
       }
