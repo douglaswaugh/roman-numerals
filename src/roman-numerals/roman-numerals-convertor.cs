@@ -11,21 +11,9 @@ namespace RomanNumerals
       var romanNumeralsBuilder = new RomanNumeralsBuilder(arabic, string.Empty);
 
       romanNumeralsBuilder = ConvertArabicToNumerals(romanNumeralsBuilder, 10, "X");
-
-      for (int i = romanNumeralsBuilder.Arabic; i >= 5; i = i - 5)
-      {
-        romanNumeralsBuilder = new RomanNumeralsBuilder(romanNumeralsBuilder.Arabic - 5, romanNumeralsBuilder.RomanNumerals + "V");
-      }
-
-      for (int i = romanNumeralsBuilder.Arabic; i >= 4; i = i -4)
-      {
-        romanNumeralsBuilder = new RomanNumeralsBuilder(romanNumeralsBuilder.Arabic - 4, romanNumeralsBuilder.RomanNumerals + "IV");
-      }
-
-      for (int i = romanNumeralsBuilder.Arabic; i >= 1; i = i - 1)
-      {
-        romanNumeralsBuilder = new RomanNumeralsBuilder(romanNumeralsBuilder.Arabic - 1, romanNumeralsBuilder.RomanNumerals + "I");
-      }
+      romanNumeralsBuilder = ConvertArabicToNumerals(romanNumeralsBuilder, 5, "V");
+      romanNumeralsBuilder = ConvertArabicToNumerals(romanNumeralsBuilder, 4, "IV");
+      romanNumeralsBuilder = ConvertArabicToNumerals(romanNumeralsBuilder, 1, "I");
 
       return romanNumeralsBuilder.RomanNumerals;
     }
