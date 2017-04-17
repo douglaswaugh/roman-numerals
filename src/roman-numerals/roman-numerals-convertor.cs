@@ -14,6 +14,12 @@ namespace RomanNumerals
         arabic = i - 5;
       }
 
+      for (int i = arabic; i >= 4; i = i -4)
+      {
+        romanNumerals += "IV";
+        arabic = i - 4;
+      }
+
       for (int i = arabic; i >= 1; i--)
       {
         romanNumerals += "I";
