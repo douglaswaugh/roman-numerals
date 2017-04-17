@@ -19,7 +19,9 @@ namespace RomanNumerals
 
       for (int i = _remaining; i >= number; i = i - number)
       {
-        romanNumeralsBuilder = new RomanNumeralsBuilder(romanNumeralsBuilder._remaining - number, romanNumeralsBuilder._romanNumerals + numeral);
+        var remaining = romanNumeralsBuilder._remaining - number;
+        var numerals = romanNumeralsBuilder._romanNumerals + numeral
+        romanNumeralsBuilder = new RomanNumeralsBuilder(remaining, numerals);
       }
 
       return romanNumeralsBuilder;
