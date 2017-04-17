@@ -15,27 +15,22 @@ namespace RomanNumerals
         romanNumeralsBuilder = new RomanNumeralsBuilder(romanNumeralsBuilder.Arabic - 10, romanNumeralsBuilder.RomanNumerals + "X");
       }
 
-      arabic = romanNumeralsBuilder.Arabic;
-      romanNumerals = romanNumeralsBuilder.RomanNumerals;
-
-      for (int i = arabic; i >= 5; i = i - 5)
+      for (int i = romanNumeralsBuilder.Arabic; i >= 5; i = i - 5)
       {
-        romanNumerals += "V";
-        arabic = i - 5;
+        romanNumeralsBuilder = new RomanNumeralsBuilder(romanNumeralsBuilder.Arabic - 5, romanNumeralsBuilder.RomanNumerals + "V");
       }
 
-      for (int i = arabic; i >= 4; i = i -4)
+      for (int i = romanNumeralsBuilder.Arabic; i >= 4; i = i -4)
       {
-        romanNumerals += "IV";
-        arabic = i - 4;
+        romanNumeralsBuilder = new RomanNumeralsBuilder(romanNumeralsBuilder.Arabic - 4, romanNumeralsBuilder.RomanNumerals + "IV");
       }
 
-      for (int i = arabic; i >= 1; i = i - 1)
+      for (int i = romanNumeralsBuilder.Arabic; i >= 1; i = i - 1)
       {
-        romanNumerals += "I";
+        romanNumeralsBuilder = new RomanNumeralsBuilder(romanNumeralsBuilder.Arabic - 1, romanNumeralsBuilder.RomanNumerals + "I");
       }
 
-      return romanNumerals;
+      return romanNumeralsBuilder.RomanNumerals;
     }
   }
 
