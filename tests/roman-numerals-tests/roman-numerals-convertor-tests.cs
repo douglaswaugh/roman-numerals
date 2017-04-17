@@ -1,5 +1,6 @@
 using NUnit.Framework;
 using RomanNumerals;
+using System.Collections.Generic;
 
 namespace RomanNumeralsTests
 {
@@ -16,7 +17,15 @@ namespace RomanNumeralsTests
     [TestCase(20, "XX")]
     public void Should_return_roman_numeral_for_arabic(int arabic, string expectedRomanNumeral)
     {
-      var romanNumeralsConvertor = new RomanNumeralsConvertor();
+      var conversions = new List<KeyValuePair<int, string>>
+      {
+        new KeyValuePair<int, string> (10, "X"),
+        new KeyValuePair<int, string> (5, "V"),
+        new KeyValuePair<int, string> (4, "IV"),
+        new KeyValuePair<int, string> (1, "I"),
+      };
+
+      var romanNumeralsConvertor = new RomanNumeralsConvertor(conversions);
 
       var romanNumeral = romanNumeralsConvertor.FromInt(arabic);
 

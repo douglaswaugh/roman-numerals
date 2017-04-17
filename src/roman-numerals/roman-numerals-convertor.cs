@@ -5,13 +5,12 @@ namespace RomanNumerals
 {
   public class RomanNumeralsConvertor
   {
-    private List<KeyValuePair<int, string>> _conversions = new List<KeyValuePair<int, string>>
+    private List<KeyValuePair<int, string>> _conversions;
+
+    public RomanNumeralsConvertor(List<KeyValuePair<int, string>> conversions)
     {
-      new KeyValuePair<int, string> (10, "X"),
-      new KeyValuePair<int, string> (5, "V"),
-      new KeyValuePair<int, string> (4, "IV"),
-      new KeyValuePair<int, string> (1, "I"),
-    };
+      _conversions = conversions;
+    }
 
     public string FromInt(int arabic)
     {
