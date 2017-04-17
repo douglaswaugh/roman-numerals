@@ -10,10 +10,7 @@ namespace RomanNumerals
 
       var romanNumeralsBuilder = new RomanNumeralsBuilder(arabic, string.Empty);
 
-      for (int i = romanNumeralsBuilder.Arabic; i >= 10; i = i - 10)
-      {
-        romanNumeralsBuilder = new RomanNumeralsBuilder(romanNumeralsBuilder.Arabic - 10, romanNumeralsBuilder.RomanNumerals + "X");
-      }
+      romanNumeralsBuilder = ConvertArabicToNumerals(romanNumeralsBuilder, 10, "X");
 
       for (int i = romanNumeralsBuilder.Arabic; i >= 5; i = i - 5)
       {
@@ -31,6 +28,16 @@ namespace RomanNumerals
       }
 
       return romanNumeralsBuilder.RomanNumerals;
+    }
+
+    private RomanNumeralsBuilder ConvertArabicToNumerals(RomanNumeralsBuilder romanNumeralsBuilder, int arabic, string numeral)
+    {
+      for (int i = romanNumeralsBuilder.Arabic; i >= arabic; i = i - arabic)
+      {
+        romanNumeralsBuilder = new RomanNumeralsBuilder(romanNumeralsBuilder.Arabic - arabic, romanNumeralsBuilder.RomanNumerals + numeral);
+      }
+
+      return romanNumeralsBuilder;
     }
   }
 
