@@ -13,6 +13,7 @@ namespace RomanNumeralsTests
     [TestCase(10, "X")]
     [TestCase(15, "XV")]
     [TestCase(18, "XVIII")]
+    [TestCase(20, "XX")]
     public void Should_return_roman_numeral_for_arabic(int arabic, string expectedRomanNumeral)
     {
       var romanNumeralsConvertor = new RomanNumeralsConvertor();
