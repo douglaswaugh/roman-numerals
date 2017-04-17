@@ -1,17 +1,28 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace RomanNumerals
 {
   public class RomanNumeralsConvertor
   {
+    private List<KeyValuePair<int, string>> _conversions = new List<KeyValuePair<int, string>>
+    {
+      new KeyValuePair<int, string> (10, "X"),
+      new KeyValuePair<int, string> (5, "V"),
+      new KeyValuePair<int, string> (4, "IV"),
+      new KeyValuePair<int, string> (1, "I"),
+    };
+
     public string FromInt(int arabic)
     {
-      return new RomanNumeralsBuilder(arabic, string.Empty)
-        .UseNumeralInsteadOfNumber(10, "X")
-        .UseNumeralInsteadOfNumber(5, "V")
-        .UseNumeralInsteadOfNumber(4, "IV")
-        .UseNumeralInsteadOfNumber(1, "I")
-        .RomanNumerals;
+      var romanNumeralsBuilder = new RomanNumeralsBuilder(arabic, string.Empty);
+
+      foreach(var keyValuePair in _conversions)
+      {
+        romanNumeralsBuilder = romanNumeralsBuilder.UseNumeralInsteadOfNumber(keyValuePair.Key, keyValuePair.Value);
+      }
+
+      return romanNumeralsBuilder.RomanNumerals;
     }
   }
 
