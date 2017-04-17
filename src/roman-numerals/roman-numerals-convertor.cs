@@ -8,11 +8,15 @@ namespace RomanNumerals
     {
       string romanNumerals = string.Empty;
 
-      for (int i = arabic; i >= 10; i = i - 10)
+      var romanNumeralsBuilder = new RomanNumeralsBuilder(arabic, string.Empty);
+
+      for (int i = romanNumeralsBuilder.Arabic; i >= 10; i = i - 10)
       {
-        romanNumerals += "X";
-        arabic = i - 10;
+        romanNumeralsBuilder = new RomanNumeralsBuilder(romanNumeralsBuilder.Arabic - 10, romanNumeralsBuilder.RomanNumerals + "X");
       }
+
+      arabic = romanNumeralsBuilder.Arabic;
+      romanNumerals = romanNumeralsBuilder.RomanNumerals;
 
       for (int i = arabic; i >= 5; i = i - 5)
       {
@@ -32,6 +36,21 @@ namespace RomanNumerals
       }
 
       return romanNumerals;
+    }
+  }
+
+  public class RomanNumeralsBuilder
+  {
+    int _arabic;
+    string _romanNumerals;
+
+    public int Arabic { get { return _arabic; } }
+    public string RomanNumerals { get { return _romanNumerals; } }
+
+    public RomanNumeralsBuilder(int arabic, string romanNumerals)
+    {
+      _arabic = arabic;
+      _romanNumerals = romanNumerals;
     }
   }
 }
